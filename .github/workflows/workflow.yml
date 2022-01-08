@@ -1,0 +1,17 @@
+on: [push]
+
+jobs: 
+  my-job: 
+    runs-on: ubuntu-latest
+    steps: 
+      - name: public action - checkout from repo and store in temp datastore 
+        uses: actions/checkout@v2
+      - name: run the memory action
+        id: action_memory
+        uses: ./  # root directory of the repo, which has our action
+        with:
+          myInput: 'Gerald'
+      - name: output 
+        run: |
+          echo ${{ steps.action_memory.outputs.memory }}
+          echo "successful run"
