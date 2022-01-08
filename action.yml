@@ -1,0 +1,14 @@
+name: 'my container action'
+description: 'a simple container action'
+author: 'Gerald B.'
+inputs:
+  myInput:
+    description: 'greeting'
+    required: true 
+    default: 'mate'
+outputs:
+  myOutput:
+    description: 'total memory'
+runs: 
+  using: 'docker'
+  image: 'Dockerfile'
